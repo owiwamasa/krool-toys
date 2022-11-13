@@ -1,0 +1,7 @@
+.image-left {
+  transform: rotate(-5deg);
+}
+
+.image-right {
+  transform: rotate(5deg);
+}

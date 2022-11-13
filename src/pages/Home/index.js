@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { InstagramEmbed } from "react-social-media-embed";
 import { ALL_PROJECTS } from "../../gql";
 import { request } from "graphql-request";
+import ContactForm from "../../components/ContactForm";
+import ProjectPile from "../../components/ProjectPile";
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     const fetchProjects = async () => {
       const { projects } = await request({
@@ -24,25 +24,24 @@ const Home = () => {
     fetchProjects();
   }, []);
 
-  console.log(projects);
-
   return (
     <Box>
-      {projects.map((project) => (
+      <ProjectPile projects={projects} />
+      {/* {projects.map((project) => (
         <Box key={project.id}>
-          <h1>{project.title}</h1>
+          <Typography>{project.title}</Typography>
           <img src={project.featuredMedia.url} alt="featured" />
           {project.instagramUrl &&
             project.instagramUrl.map((url) => (
-              <div
+              <Box
                 key={url}
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <InstagramEmbed url={url} width={328} captioned />
-              </div>
+              </Box>
             ))}
         </Box>
-      ))}
+      ))} */}
     </Box>
   );
 };
