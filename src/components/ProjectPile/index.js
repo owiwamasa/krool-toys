@@ -1,22 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { Image } from "mui-image";
 import "./index.css";
 import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
+import { styled } from "@mui/system";
+
+const NavButton = styled(Button)(() => ({
+  color: "black",
+  "&:hover": {
+    backgroundColor: "transparent",
+  },
+}));
 
 const ProjectPile = ({ projects }) => {
-  const [currentIndex, setcurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [opacity, setOpacity] = useState(0);
 
   const classNameGenerator = (index) => {
     if (index % 3 === 0 || index === 0) {
       return "image-left";
     } else if (index % 3 === 1) {
-      return "image-right";
-    } else {
       return "image-even";
+    } else {
+      return "image-right";
     }
   };
+
+  useEffect(() => {
+    if (opacity >= 1) return;
+
+    const fadeTimeout = setInterval(() => {
+      if (opacity < 1) {
+        setOpacity(opacity + 0.1);
+      }
+    }, 100);
+
+    return () => clearInterval(fadeTimeout);
+  }, [opacity]);
 
   return (
     <Box
@@ -30,27 +51,25 @@ const ProjectPile = ({ projects }) => {
     >
       <Box
         sx={{
-          width: "80%",
+          width: "60%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <Button
-          onClick={() => setcurrentIndex(currentIndex - 1)}
-          disabled={currentIndex === 0}
-          sx={{
-            color: "black",
-            "&:hover": {
-              backgroundColor: "transparent",
-            },
+        <NavButton
+          disableRipple
+          onClick={() => {
+            setCurrentIndex(currentIndex - 1);
+            setOpacity(0);
           }}
+          disabled={currentIndex === 0}
         >
           <WestIcon />
-        </Button>
+        </NavButton>
         <Box
           sx={{
-            marginTop: "-60px",
+            marginTop: "-80px",
             position: "relative",
             display: "flex",
             alignItems: "center",
@@ -74,7 +93,7 @@ const ProjectPile = ({ projects }) => {
                 src={project?.featuredMedia?.url}
                 width="450px"
                 height="650px"
-                duration={2000}
+                duration={1000}
                 style={{
                   opacity: index < currentIndex ? 0 : 1,
                   top: `${-100 * index}%`,
@@ -84,23 +103,23 @@ const ProjectPile = ({ projects }) => {
             ))}
           </Box>
         </Box>
-        <Button
-          onClick={() => setcurrentIndex(currentIndex + 1)}
-          disabled={currentIndex === projects.length - 1}
-          sx={{
-            color: "black",
-            "&:hover": {
-              backgroundColor: "transparent",
-            },
+        <NavButton
+          disableRipple
+          onClick={() => {
+            setCurrentIndex(currentIndex + 1);
+            setOpacity(0);
           }}
+          disabled={currentIndex === projects.length - 1}
         >
           <EastIcon />
-        </Button>
+        </NavButton>
       </Box>
       <Typography
         sx={{
+          marginTop: "10px",
           fontFamily: "PixelTimesNewRoman",
           fontSize: "60px",
+          opacity: opacity,
         }}
       >
         {projects[currentIndex]?.title}

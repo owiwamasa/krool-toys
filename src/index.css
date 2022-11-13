@@ -1,6 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: radial-gradient(
+    rgba(179, 179, 179, 0.752) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 50px 50px;
 }
 
 @font-face {

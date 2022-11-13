@@ -7,10 +7,11 @@ const AboutUsButton = () => {
       sx={{
         display: "flex",
         justifyContent: "flex-end",
-        padding: "20px 20px 0 0 ",
+        padding: "20px 40px 0 0 ",
       }}
     >
       <Button
+        disableRipple
         sx={{
           fontFamily: "PixelTimesNewRoman",
           fontSize: "40px",
@@ -21,7 +22,7 @@ const AboutUsButton = () => {
           },
         }}
       >
-        Krools Toys Studio
+        Krools Toys
       </Button>
     </Box>
   );
