@@ -17,3 +17,11 @@ export const ALL_PROJECTS = gql`
     }
   }
 `;
+
+export const GENIE_TEXT = gql`
+  query MyQuery {
+    genieTexts {
+      text
+    }
+  }
+`;

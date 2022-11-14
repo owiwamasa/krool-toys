@@ -1,0 +1,25 @@
+.bubble {
+  position: relative;
+  font-family: PixelTimesNewRoman;
+  font-size: 1.5vw;
+  line-height: 1.5vw;
+  width: 60%;
+  background: rgb(247, 246, 183);
+  border-radius: 40px;
+  padding: 5%;
+  text-align: center;
+  color: #000;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid rgb(247, 246, 183);
+  border-right: 12px solid transparent;
+  border-top: 12px solid rgb(247, 246, 183);
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}

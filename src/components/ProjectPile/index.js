@@ -5,6 +5,7 @@ import "./index.css";
 import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
 import { styled } from "@mui/system";
+import { theme } from "../../MuiStyling";
 
 const NavButton = styled(Button)(() => ({
   color: "black",
@@ -13,7 +14,7 @@ const NavButton = styled(Button)(() => ({
   },
 }));
 
-const ProjectPile = ({ projects }) => {
+const ProjectPile = ({ project }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [opacity, setOpacity] = useState(0);
 
@@ -39,6 +40,11 @@ const ProjectPile = ({ projects }) => {
     return () => clearInterval(fadeTimeout);
   }, [opacity]);
 
+  useEffect(() => {
+    setCurrentIndex(0);
+    setOpacity(0);
+  }, [project]);
+
   return (
     <Box
       sx={{
@@ -46,84 +52,98 @@ const ProjectPile = ({ projects }) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width: "100%",
+        width: "50%",
+        top: "5%",
+        [theme.breakpoints.down("xl")]: {
+          marginTop: "10%",
+        },
+        [theme.breakpoints.down("lg")]: {
+          marginTop: "25%",
+        },
+        [theme.breakpoints.down("md")]: {
+          display: "none",
+        },
       }}
     >
       <Box
         sx={{
-          width: "60%",
+          width: "35vw",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "center",
         }}
       >
-        <NavButton
-          disableRipple
-          onClick={() => {
-            setCurrentIndex(currentIndex - 1);
-            setOpacity(0);
-          }}
-          disabled={currentIndex === 0}
-        >
-          <WestIcon />
-        </NavButton>
         <Box
           sx={{
-            marginTop: "-80px",
             position: "relative",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             marginRight: "0",
-            height: "800px",
-            width: "520px",
+            height: "38vw",
+            width: "35vw",
+            maxHeight: "650px",
             overflow: "clip",
           }}
         >
           <Box
             sx={{
               display: "relative",
-              height: "550px",
+              height: "50vw",
             }}
           >
-            {projects.map((project, index) => (
+            {project?.media.map((media, index) => (
               <Image
                 key={index}
                 className={classNameGenerator(index)}
-                src={project?.featuredMedia?.url}
-                width="450px"
-                height="650px"
+                id="image"
+                src={media.url}
                 duration={1000}
                 style={{
                   opacity: index < currentIndex ? 0 : 1,
                   top: `${-100 * index}%`,
                   zIndex: `${-index}`,
+                  width: "30vw",
+                  height: "35vw",
+                  maxWidth: "600px",
+                  maxHeight: "650px",
                 }}
               />
             ))}
           </Box>
         </Box>
-        <NavButton
-          disableRipple
-          onClick={() => {
-            setCurrentIndex(currentIndex + 1);
-            setOpacity(0);
-          }}
-          disabled={currentIndex === projects.length - 1}
-        >
-          <EastIcon />
-        </NavButton>
       </Box>
       <Typography
         sx={{
           marginTop: "10px",
           fontFamily: "PixelTimesNewRoman",
-          fontSize: "60px",
+          fontSize: "4vw",
           opacity: opacity,
+          whiteSpace: "nowrap",
         }}
       >
-        {projects[currentIndex]?.title}
+        {project?.title}
       </Typography>
+      <Box sx={{ display: "flex" }}>
+        <NavButton
+          disableRipple
+          onClick={() => {
+            setCurrentIndex(currentIndex - 1);
+          }}
+          disabled={currentIndex === 0}
+        >
+          <WestIcon sx={{ fontSize: "2.5vw" }} />
+        </NavButton>
+        <NavButton
+          disableRipple
+          onClick={() => {
+            setCurrentIndex(currentIndex + 1);
+          }}
+          disabled={currentIndex === project?.media.length - 1}
+        >
+          <EastIcon sx={{ fontSize: "2.5vw" }} />
+        </NavButton>
+      </Box>
     </Box>
   );
 };

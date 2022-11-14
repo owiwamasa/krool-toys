@@ -1,11 +1,16 @@
 body {
   margin: 0;
   padding: 0;
+  cursor: url(./assets/NormalSelect.cur), auto;
   background-image: radial-gradient(
     rgba(179, 179, 179, 0.752) 1.5px,
     transparent 1.5px
   );
   background-size: 50px 50px;
+}
+
+body button:hover {
+  cursor: url(./assets/NormalSelect.cur), auto;
 }
 
 @font-face {
