@@ -4,7 +4,7 @@ import GeniePicture from "../../assets/genie.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Genie = ({ genieText }) => {
+const Genie = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -29,7 +29,7 @@ const Genie = ({ genieText }) => {
           marginLeft: "50%",
         }}
       >
-        {genieText}
+        Click me to receive 3 wishes.
       </a>
       <a href="mailto: info@krooltoys.com" style={{ width: "40%" }}>
         <img width="100%" height="auto" src={GeniePicture} alt="genie" />

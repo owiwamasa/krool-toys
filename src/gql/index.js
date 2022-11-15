@@ -18,10 +18,13 @@ export const ALL_PROJECTS = gql`
   }
 `;
 
-export const GENIE_TEXT = gql`
+export const ABOUT_PAGE = gql`
   query MyQuery {
-    genieTexts {
-      text
+    aboutUsPages {
+      description
+      media {
+        url
+      }
     }
   }
 `;

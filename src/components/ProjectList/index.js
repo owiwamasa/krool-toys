@@ -7,12 +7,6 @@ const ProjectList = ({ projects, setSelectedProject }) => {
     <Box
       sx={{
         paddingLeft: "3vw",
-        // [theme.breakpoints.up("sm")]: {
-        //   width: "50%",
-        // },
-        // [theme.breakpoints.down("sm")]: {
-        //   width: "300px",
-        // },
       }}
     >
       {[...projects, ...projects, ...projects, ...projects].map(
@@ -39,6 +33,12 @@ const ProjectList = ({ projects, setSelectedProject }) => {
                   lineHeight: "6vw",
                   alignSelf: "flex-start",
                 },
+                [theme.breakpoints.down("sm")]: {
+                  fontSize: "20px",
+                  lineHeight: "28px",
+                  alignSelf: "flex-start",
+                  marginRight: "2.5vw",
+                },
               }}
             >
               {index < 9 ? `0${index + 1}` : index + 1}
@@ -55,8 +55,8 @@ const ProjectList = ({ projects, setSelectedProject }) => {
                   lineHeight: "7vw",
                 },
                 [theme.breakpoints.down("sm")]: {
-                  fontSize: "7vw",
-                  lineHeight: "8vw",
+                  fontSize: "32px",
+                  lineHeight: "36px",
                   whiteSpace: "normal",
                 },
                 "&:hover": {

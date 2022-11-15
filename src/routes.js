@@ -1,12 +1,95 @@
-import { Box } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Typography } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
+import AboutPage from "./pages/About";
 import Home from "./pages/Home";
+import { request } from "graphql-request";
+import { ABOUT_PAGE, ALL_PROJECTS } from "./gql";
+import LogoGif from "./assets/Final-Gif.gif";
 
 const RouteProvider = () => {
+  const [loading, setLoading] = useState(true);
+  const [aboutUs, setAboutUs] = useState();
+  const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState();
+
+  useEffect(() => {
+    if (!loading) return;
+    setTimeout(() => {
+      setLoading(false);
+    }, [2000]);
+  }, [loading]);
+
+  useEffect(() => {
+    const fetchAboutUs = async () => {
+      const { aboutUsPages } = await request({
+        url: process.env.REACT_APP_HYGRAPH_URL,
+        document: ABOUT_PAGE,
+        requestHeaders: {
+          Authorization: `Bearer ${process.env.REACT_APP_HYGRAPH_API_TOKEN}`,
+        },
+      });
+
+      setAboutUs(aboutUsPages[0]);
+    };
+
+    const fetchProjects = async () => {
+      const { projects } = await request({
+        url: process.env.REACT_APP_HYGRAPH_URL,
+        document: ALL_PROJECTS,
+        requestHeaders: {
+          Authorization: `Bearer ${process.env.REACT_APP_HYGRAPH_API_TOKEN}`,
+        },
+      });
+
+      setProjects(projects);
+      setSelectedProject(projects[0]);
+    };
+
+    fetchAboutUs();
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <Box
+        onClick={() => setLoading(false)}
+        sx={{
+          width: "100%",
+          height: "800px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img src={LogoGif} width="500px" height="300px" alt="logo" />
+        <Typography
+          sx={{
+            fontFamily: "PixelTimesNewRoman",
+            fontSize: "32px",
+          }}
+        >
+          Loading ...
+        </Typography>
+      </Box>
+    );
+  }
+
   return (
     <Box>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              projects={projects}
+              selectedProject={selectedProject}
+              setSelectedProject={setSelectedProject}
+            />
+          }
+        />
+        <Route path="/about" element={<AboutPage aboutUs={aboutUs} />} />
       </Routes>
     </Box>
   );

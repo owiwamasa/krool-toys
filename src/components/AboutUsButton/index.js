@@ -1,8 +1,14 @@
 import { Box, Button } from "@mui/material";
 import React from "react";
 import { theme } from "../../MuiStyling";
+import { useNavigate } from "react-router-dom";
 
 const AboutUsButton = () => {
+  const navigate = useNavigate();
+
+  const goToAboutPage = () => {
+    navigate("/about");
+  };
   return (
     <Box
       sx={{
@@ -19,6 +25,7 @@ const AboutUsButton = () => {
     >
       <Button
         disableRipple
+        onClick={() => goToAboutPage()}
         sx={{
           fontFamily: "PixelTimesNewRoman",
           fontSize: "2.8vw",
@@ -27,6 +34,9 @@ const AboutUsButton = () => {
           color: "black",
           "&:hover": {
             backgroundColor: "transparent",
+          },
+          [theme.breakpoints.down("sm")]: {
+            fontSize: "20px",
           },
         }}
       >

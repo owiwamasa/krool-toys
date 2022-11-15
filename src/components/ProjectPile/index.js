@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Image } from "mui-image";
 import "./index.css";
 import WestIcon from "@mui/icons-material/West";
@@ -53,12 +53,12 @@ const ProjectPile = ({ project }) => {
         alignItems: "center",
         justifyContent: "center",
         width: "50%",
-        top: "5%",
+        marginTop: "11%",
         [theme.breakpoints.down("xl")]: {
-          marginTop: "10%",
+          marginTop: "22%",
         },
         [theme.breakpoints.down("lg")]: {
-          marginTop: "25%",
+          marginTop: "30%",
         },
         [theme.breakpoints.down("md")]: {
           display: "none",
@@ -82,14 +82,20 @@ const ProjectPile = ({ project }) => {
             marginRight: "0",
             height: "38vw",
             width: "35vw",
-            maxHeight: "650px",
+            maxHeight: "710px",
             overflow: "clip",
+            [theme.breakpoints.up(1700)]: {
+              height: "600px",
+            },
           }}
         >
           <Box
             sx={{
               display: "relative",
               height: "50vw",
+              [theme.breakpoints.up(1700)]: {
+                height: "550px",
+              },
             }}
           >
             {project?.media.map((media, index) => (
@@ -105,26 +111,15 @@ const ProjectPile = ({ project }) => {
                   zIndex: `${-index}`,
                   width: "30vw",
                   height: "35vw",
-                  maxWidth: "600px",
-                  maxHeight: "650px",
+                  maxWidth: "500px",
+                  maxHeight: "550px",
                 }}
               />
             ))}
           </Box>
         </Box>
       </Box>
-      <Typography
-        sx={{
-          marginTop: "10px",
-          fontFamily: "PixelTimesNewRoman",
-          fontSize: "4vw",
-          opacity: opacity,
-          whiteSpace: "nowrap",
-        }}
-      >
-        {project?.title}
-      </Typography>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", marginTop: "10px" }}>
         <NavButton
           disableRipple
           onClick={() => {
