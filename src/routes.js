@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import AboutPage from "./pages/About";
 import Home from "./pages/Home";
 import { request } from "graphql-request";
@@ -14,7 +14,17 @@ const RouteProvider = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  console.log(projects);
+
+  const useScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  };
+
+  useScrollToTop();
+
   useEffect(() => {
     if (!loading) return;
     setTimeout(() => {
@@ -80,7 +90,7 @@ const RouteProvider = () => {
 
   return (
     <Box>
-      <Routes>
+      <Routes onUpdate={() => window.scrollTo(0, 0)}>
         <Route
           path="/"
           element={

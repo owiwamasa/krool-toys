@@ -6,11 +6,14 @@ import "aos/dist/aos.css";
 import { Image } from "mui-image";
 import { theme } from "../../MuiStyling";
 import Marquee from "react-fast-marquee";
+import ProjectPageNavigation from "../../components/ProjectPageNavigation";
 
 const ProjectPage = ({ projects }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const project = projects[Number(id) - 1];
+  const prevProject = projects[Number(id) - 2] && projects[Number(id) - 2];
+  const nextProject = projects[Number(id)] && projects[Number(id)];
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -18,12 +21,13 @@ const ProjectPage = ({ projects }) => {
 
   return (
     <Box
+      key={project.id}
       sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "2vw 4vw 10vw 4vw",
+        padding: "2vw 4vw 4vw 4vw",
         [theme.breakpoints.down("sm")]: {
           padding: "4vw 1vw 3vw 6vw",
         },
@@ -268,6 +272,11 @@ const ProjectPage = ({ projects }) => {
           {project.description}
         </Typography>
       </Box>
+      <ProjectPageNavigation
+        id={id}
+        nextProject={nextProject}
+        prevProject={prevProject}
+      />
     </Box>
   );
 };
