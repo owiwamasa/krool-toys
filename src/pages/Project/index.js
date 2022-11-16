@@ -102,11 +102,14 @@ const ProjectPage = ({ projects }) => {
       >
         <Typography
           data-aos="flip-right"
+          dangerouslySetInnerHTML={{
+            __html: project.subtitle.text.split("\\n").join("<br/><br/>"),
+          }}
           sx={{
             fontFamily: "Inter",
             fontSize: "3vw",
             lineHeight: "3.5vw",
-            padding: "8% 3% 7% 0",
+            padding: "10% 3% 7% 0",
             width: "60%",
             textAlign: "left",
             textTransform: "capitalize",
@@ -115,9 +118,7 @@ const ProjectPage = ({ projects }) => {
               lineHeight: "20px",
             },
           }}
-        >
-          {project.subtitle.text}
-        </Typography>
+        />
         <Image
           alt="project"
           src={project.featuredMedia[1].url}
@@ -265,6 +266,9 @@ const ProjectPage = ({ projects }) => {
         </Box>
         <Typography
           data-aos="flip-right"
+          dangerouslySetInnerHTML={{
+            __html: project.description.text.split("\\n").join("<br/><br/>"),
+          }}
           sx={{
             fontFamily: "Inter",
             fontSize: "2vw",
@@ -275,9 +279,7 @@ const ProjectPage = ({ projects }) => {
               lineHeight: "18px",
             },
           }}
-        >
-          {project.description.text}
-        </Typography>
+        />
       </Box>
       <ProjectPageNavigation
         id={id}
