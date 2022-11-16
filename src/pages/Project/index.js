@@ -144,7 +144,7 @@ const ProjectPage = ({ projects }) => {
                 fontFamily: "MessyWritingPixel",
                 fontSize: "5vw",
                 marginRight: "2vw",
-                color: "#DC159D",
+                color: "#F90502",
               }}
             >
               {`${project.title} x`}

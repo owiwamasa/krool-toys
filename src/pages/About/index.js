@@ -303,7 +303,7 @@ const AboutPage = ({ aboutUs }) => {
               Terms of Service
             </Link>
             <Link
-              href="https://www.dropbox.com/scl/fo/1bwt11dis48735b57vn9x/h?dl=0&preview=krool-toys-privacy-policy.pdf&rlkey=lfi2zwauqz8rbhljony1y2kc6"
+              href="https://www.dropbox.com/s/paf0f4pfm3edcdn/krool-toys-privacy-policy.pdf?dl=0"
               target="_blank"
               sx={{
                 fontFamily: "Inter",

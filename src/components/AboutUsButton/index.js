@@ -1,9 +1,7 @@
 import { Box, Button } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { theme } from "../../MuiStyling";
 import { useNavigate } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const AboutUsButton = () => {
   const navigate = useNavigate();
@@ -12,13 +10,8 @@ const AboutUsButton = () => {
     navigate("/about");
   };
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
   return (
     <Box
-      data-aos="flip-right"
       sx={{
         alignSelf: "flex-end",
         display: "flex",
@@ -35,25 +28,22 @@ const AboutUsButton = () => {
         disableRipple
         onClick={() => goToAboutPage()}
         sx={{
-          fontFamily: "Inter",
-          fontSize: "2.4vw",
-          lineHeight: "3vw",
           textTransform: "capitalize",
           whiteSpace: "nowrap",
-          color: "black",
-          "&:hover": {
+          color: "#F90502",
+          textDecoration: "underline",
+          backgroundColor: "transparent",
+          fontFamily: "MessyWritingPixel",
+          fontSize: "2.8vw",
+          lineHeight: "3vw",
+          "&: hover": {
+            textDecoration: "underline",
             backgroundColor: "transparent",
-            fontFamily: "MessyWritingPixel",
-            fontSize: "2.8vw",
-            lineHeight: "3vw",
           },
           [theme.breakpoints.down("sm")]: {
+            backgroundColor: "transparent",
+            fontFamily: "MessyWritingPixel",
             fontSize: "20px",
-            "&:hover": {
-              backgroundColor: "transparent",
-              fontFamily: "MessyWritingPixel",
-              fontSize: "20px",
-            },
           },
         }}
       >
