@@ -81,7 +81,7 @@ const AboutPage = ({ aboutUs }) => {
           fontSize: "5vw",
           lineHeight: "5.5vw",
           width: "85%",
-          marginBottom: "10%",
+          marginBottom: "2%",
           [theme.breakpoints.down("sm")]: {
             marginTop: "10%",
             paddingLeft: "3%",
@@ -96,7 +96,7 @@ const AboutPage = ({ aboutUs }) => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          [theme.breakpoints.down("sm")]: {
+          [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
         }}
@@ -119,11 +119,14 @@ const AboutPage = ({ aboutUs }) => {
             flexDirection: "column",
             justifyContent: "space-between",
             alignItems: "left",
-            [theme.breakpoints.down("sm")]: {
-              marginTop: "10%",
+            [theme.breakpoints.down("md")]: {
+              marginTop: "5%",
               flexDirection: "row",
               width: "90%",
               justifyContent: "space-around",
+            },
+            [theme.breakpoints.down("sm")]: {
+              marginTop: "10%",
             },
           }}
         >
@@ -138,7 +141,7 @@ const AboutPage = ({ aboutUs }) => {
               fontSize: "3vw",
               lineHeight: "3vw",
               color: "black",
-              width: "50%",
+              width: "80%",
               textAlign: "left",
               padding: 0,
               "&:hover": {

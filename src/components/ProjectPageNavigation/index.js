@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
+import { theme } from "../../MuiStyling";
 
 const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
   const navigate = useNavigate();
@@ -13,6 +14,9 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
         justifyContent: "space-between",
         marginTop: "12%",
         minWidth: "90%",
+        [theme.breakpoints.down("sm")]: {
+          minWidth: "100%",
+        },
       }}
     >
       {prevProject ? (
@@ -27,6 +31,10 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
             textTransform: "capitalize",
             "&:hover": {
               backgroundColor: "transparent",
+            },
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "14px",
+              lineHeight: "20px",
             },
           }}
         >
@@ -48,6 +56,10 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
             textTransform: "capitalize",
             "&:hover": {
               backgroundColor: "transparent",
+            },
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "14px",
+              lineHeight: "20px",
             },
           }}
         >

@@ -7,6 +7,7 @@ import { Image } from "mui-image";
 import { theme } from "../../MuiStyling";
 import Marquee from "react-fast-marquee";
 import ProjectPageNavigation from "../../components/ProjectPageNavigation";
+import "./index.css";
 
 const ProjectPage = ({ projects }) => {
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ const ProjectPage = ({ projects }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        maxWidth: "100%",
+        overflow: "hidden",
         padding: "2vw 4vw 4vw 4vw",
         [theme.breakpoints.down("sm")]: {
           padding: "4vw 1vw 3vw 6vw",
@@ -80,6 +83,9 @@ const ProjectPage = ({ projects }) => {
             width: "60%",
             textAlign: "right",
             paddingRight: "8%",
+            [theme.breakpoints.down("lg")]: {
+              paddingLeft: "10%",
+            },
           }}
         >
           {project.title}
@@ -102,6 +108,10 @@ const ProjectPage = ({ projects }) => {
             padding: "8% 3% 7% 0",
             width: "60%",
             textAlign: "left",
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "16px",
+              lineHeight: "20px",
+            },
           }}
         >
           {project.subtitle.text}
@@ -146,6 +156,9 @@ const ProjectPage = ({ projects }) => {
           alignItems: "center",
           width: "100%",
           marginTop: "7%",
+          [theme.breakpoints.down("sm")]: {
+            width: "110%",
+          },
         }}
       >
         <Box
@@ -158,14 +171,11 @@ const ProjectPage = ({ projects }) => {
           }}
         >
           <img
+            className="bottom-image"
             data-aos="slide-up"
             src={project.featuredMedia[2].url}
             alt="project"
             style={{
-              width: "40vw",
-              height: "40vw",
-              maxWidth: "550px",
-              maxHeight: "650px",
               border: "1px solid black",
               boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
               objectFit: "cover",
@@ -182,14 +192,11 @@ const ProjectPage = ({ projects }) => {
           }}
         >
           <img
+            className="bottom-image"
             data-aos="slide-left"
             src={project.otherMedia[0].url}
             alt="project"
             style={{
-              width: "40vw",
-              height: "40vw",
-              maxWidth: "550px",
-              maxHeight: "650px",
               border: "1px solid black",
               boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
               objectFit: "cover",
@@ -220,13 +227,10 @@ const ProjectPage = ({ projects }) => {
             }}
           >
             <img
+              className="bottom-image"
               src={project.otherMedia[1].url}
               alt="project"
               style={{
-                width: "40vw",
-                height: "40vw",
-                maxWidth: "550px",
-                maxHeight: "650px",
                 border: "1px solid black",
                 boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
                 objectFit: "cover",
@@ -245,13 +249,10 @@ const ProjectPage = ({ projects }) => {
             }}
           >
             <img
+              className="bottom-image"
               src={project.otherMedia[2].url}
               alt="project"
               style={{
-                width: "40vw",
-                height: "40vw",
-                maxWidth: "550px",
-                maxHeight: "650px",
                 border: "1px solid black",
                 boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
                 objectFit: "cover",
@@ -267,6 +268,10 @@ const ProjectPage = ({ projects }) => {
             fontSize: "3vw",
             lineHeight: "3.5vw",
             width: "40%",
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "18px",
+              lineHeight: "18px",
+            },
           }}
         >
           {project.description}
