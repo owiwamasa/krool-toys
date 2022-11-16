@@ -29,7 +29,7 @@ const RouteProvider = () => {
     if (!loading) return;
     setTimeout(() => {
       setLoading(false);
-    }, [2000]);
+    }, [3000]);
   }, [loading]);
 
   useEffect(() => {
