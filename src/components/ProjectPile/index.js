@@ -6,6 +6,7 @@ import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
 import { styled } from "@mui/system";
 import { theme } from "../../MuiStyling";
+import { useNavigate } from "react-router-dom";
 
 const NavButton = styled(Button)(() => ({
   color: "black",
@@ -14,15 +15,16 @@ const NavButton = styled(Button)(() => ({
   },
 }));
 
-const ProjectPile = ({ project }) => {
+const ProjectPile = ({ project, selectedProjectIndex }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [opacity, setOpacity] = useState(0);
+  const navigate = useNavigate();
 
   const classNameGenerator = (index) => {
     if (index % 3 === 0 || index === 0) {
-      return "image-left";
-    } else if (index % 3 === 1) {
       return "image-even";
+    } else if (index % 3 === 1) {
+      return "image-left";
     } else {
       return "image-right";
     }
@@ -53,12 +55,12 @@ const ProjectPile = ({ project }) => {
         alignItems: "center",
         justifyContent: "center",
         width: "50%",
-        marginTop: "11%",
+        marginTop: "8%",
         [theme.breakpoints.down("xl")]: {
-          marginTop: "22%",
+          marginTop: "10%",
         },
         [theme.breakpoints.down("lg")]: {
-          marginTop: "30%",
+          marginTop: "12%",
         },
         [theme.breakpoints.down("md")]: {
           display: "none",
@@ -67,7 +69,7 @@ const ProjectPile = ({ project }) => {
     >
       <Box
         sx={{
-          width: "35vw",
+          width: "40vw",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -80,12 +82,12 @@ const ProjectPile = ({ project }) => {
             alignItems: "center",
             justifyContent: "center",
             marginRight: "0",
-            height: "38vw",
-            width: "35vw",
+            height: "45vw",
+            width: "100%",
             maxHeight: "710px",
             overflow: "clip",
             [theme.breakpoints.up(1700)]: {
-              height: "600px",
+              height: "650px",
             },
           }}
         >
@@ -98,8 +100,11 @@ const ProjectPile = ({ project }) => {
               },
             }}
           >
-            {project?.media.map((media, index) => (
+            {project?.featuredMedia.map((media, index) => (
               <Image
+                onClick={() =>
+                  navigate(`/projects/${selectedProjectIndex + 1}`)
+                }
                 key={index}
                 className={classNameGenerator(index)}
                 id="image"
@@ -113,13 +118,15 @@ const ProjectPile = ({ project }) => {
                   height: "35vw",
                   maxWidth: "500px",
                   maxHeight: "550px",
+                  border: "1px solid black",
+                  boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
                 }}
               />
             ))}
           </Box>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", marginTop: "10px" }}>
+      <Box sx={{ display: "flex", marginTop: "-5%" }}>
         <NavButton
           disableRipple
           onClick={() => {
@@ -134,7 +141,7 @@ const ProjectPile = ({ project }) => {
           onClick={() => {
             setCurrentIndex(currentIndex + 1);
           }}
-          disabled={currentIndex === project?.media.length - 1}
+          disabled={currentIndex === project?.featuredMedia.length - 1}
         >
           <EastIcon sx={{ fontSize: "2.5vw" }} />
         </NavButton>

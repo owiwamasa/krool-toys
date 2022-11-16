@@ -40,7 +40,7 @@ const AboutUsButton = () => {
           },
         }}
       >
-        Krools Toys
+        Krool Toys
       </Button>
     </Box>
   );

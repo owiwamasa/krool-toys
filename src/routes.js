@@ -6,13 +6,15 @@ import Home from "./pages/Home";
 import { request } from "graphql-request";
 import { ABOUT_PAGE, ALL_PROJECTS } from "./gql";
 import LogoGif from "./assets/Final-Gif.gif";
+import ProjectPage from "./pages/Project";
 
 const RouteProvider = () => {
   const [loading, setLoading] = useState(true);
   const [aboutUs, setAboutUs] = useState();
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState();
-
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  console.log(projects);
   useEffect(() => {
     if (!loading) return;
     setTimeout(() => {
@@ -86,10 +88,16 @@ const RouteProvider = () => {
               projects={projects}
               selectedProject={selectedProject}
               setSelectedProject={setSelectedProject}
+              selectedProjectIndex={selectedProjectIndex}
+              setSelectedProjectIndex={setSelectedProjectIndex}
             />
           }
         />
         <Route path="/about" element={<AboutPage aboutUs={aboutUs} />} />
+        <Route
+          path="/projects/:id"
+          element={<ProjectPage projects={projects} />}
+        />
       </Routes>
     </Box>
   );

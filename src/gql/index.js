@@ -4,14 +4,15 @@ export const ALL_PROJECTS = gql`
   query Projects {
     projects {
       id
-      instagramUrl
-      publishedAt
-      slug
       title
+      subtitle {
+        text
+      }
+      description
       featuredMedia {
         url
       }
-      media {
+      otherMedia {
         url
       }
     }

@@ -6,7 +6,13 @@ import ProjectList from "../../components/ProjectList";
 import { theme } from "../../MuiStyling";
 import AboutUsButton from "../../components/AboutUsButton";
 
-const Home = ({ projects, selectedProject, setSelectedProject }) => {
+const Home = ({
+  projects,
+  selectedProject,
+  setSelectedProject,
+  selectedProjectIndex,
+  setSelectedProjectIndex,
+}) => {
   return (
     <Box
       sx={{
@@ -32,6 +38,8 @@ const Home = ({ projects, selectedProject, setSelectedProject }) => {
         <ProjectList
           projects={projects}
           setSelectedProject={setSelectedProject}
+          selectedProjectIndex={selectedProjectIndex}
+          setSelectedProjectIndex={setSelectedProjectIndex}
         />
         <Box
           sx={{
@@ -47,7 +55,10 @@ const Home = ({ projects, selectedProject, setSelectedProject }) => {
           }}
         >
           <AboutUsButton />
-          <ProjectPile project={selectedProject} />
+          <ProjectPile
+            project={selectedProject}
+            selectedProjectIndex={selectedProjectIndex}
+          />
         </Box>
       </Box>
       <Genie />
