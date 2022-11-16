@@ -30,19 +30,18 @@ const AboutUsButton = () => {
         sx={{
           textTransform: "capitalize",
           whiteSpace: "nowrap",
-          color: "#F90502",
-          textDecoration: "underline",
+          color: "black",
           backgroundColor: "transparent",
-          fontFamily: "MessyWritingPixel",
+          fontFamily: "PixelTimesNewRoman",
           fontSize: "2.8vw",
           lineHeight: "3vw",
           "&: hover": {
-            textDecoration: "underline",
             backgroundColor: "transparent",
+            textDecoration: "underline",
           },
           [theme.breakpoints.down("sm")]: {
             backgroundColor: "transparent",
-            fontFamily: "MessyWritingPixel",
+            fontFamily: "PixelTimesNewRoman",
             fontSize: "20px",
           },
         }}

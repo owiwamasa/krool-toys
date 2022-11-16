@@ -41,7 +41,7 @@ const ProjectPage = ({ projects }) => {
         onClick={() => navigate("/")}
         sx={{
           alignSelf: "flex-end",
-          fontFamily: "Inter",
+          fontFamily: "PixelTimesNewRoman",
           fontSize: "5.5vw",
           height: "4vw",
           color: "black",
@@ -76,7 +76,7 @@ const ProjectPage = ({ projects }) => {
         <Typography
           data-aos="fade-in"
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "PixelTimesNewRoman",
             fontSize: "6vw",
             lineHeight: "6vw",
             paddingBottom: "8%",
@@ -267,8 +267,8 @@ const ProjectPage = ({ projects }) => {
           data-aos="flip-right"
           sx={{
             fontFamily: "Inter",
-            fontSize: "3vw",
-            lineHeight: "3.5vw",
+            fontSize: "2vw",
+            lineHeight: "2.5vw",
             width: "40%",
             [theme.breakpoints.down("sm")]: {
               fontSize: "18px",
@@ -276,7 +276,7 @@ const ProjectPage = ({ projects }) => {
             },
           }}
         >
-          {project.description}
+          {project.description.text}
         </Typography>
       </Box>
       <ProjectPageNavigation

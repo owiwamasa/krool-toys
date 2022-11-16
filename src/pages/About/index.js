@@ -68,7 +68,7 @@ const AboutPage = ({ aboutUs }) => {
           color: "black",
           fontSize: "5.5vw",
           height: "4vw",
-          fontFamily: "Inter",
+          fontFamily: "PixelTimesNewRoman",
           "&:hover": {
             backgroundColor: "transparent",
           },

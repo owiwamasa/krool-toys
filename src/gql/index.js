@@ -8,7 +8,9 @@ export const ALL_PROJECTS = gql`
       subtitle {
         text
       }
-      description
+      description {
+        text
+      }
       featuredMedia {
         url
       }

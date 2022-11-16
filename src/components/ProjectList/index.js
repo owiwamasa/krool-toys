@@ -52,17 +52,7 @@ const ProjectList = ({
               },
             }}
           >
-            {index % 6 === 0
-              ? "✩"
-              : index % 6 === 1
-              ? "✵"
-              : index % 6 === 2
-              ? "☪"
-              : index % 6 === 3
-              ? "⚝"
-              : index % 6 === 4
-              ? "✰"
-              : "✡"}
+            -
           </Typography>
           <Typography
             onClick={() => navigate(`/projects/${index + 1}`)}
