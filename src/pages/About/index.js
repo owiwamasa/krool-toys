@@ -55,7 +55,7 @@ const AboutPage = ({ aboutUs }) => {
         flexDirection: "column",
         padding: "2vw 4vw 4vw 6vw",
         [theme.breakpoints.down("sm")]: {
-          padding: "4vw 1vw 3vw 6vw",
+          padding: "4vw 3vw 3vw 3vw",
         },
       }}
     >
@@ -81,10 +81,12 @@ const AboutPage = ({ aboutUs }) => {
           fontSize: "5vw",
           lineHeight: "5.5vw",
           width: "85%",
-          marginBottom: "5%",
+          marginBottom: "10%",
           [theme.breakpoints.down("sm")]: {
-            fontSize: "32px",
-            lineHeight: "32px",
+            marginTop: "10%",
+            paddingLeft: "3%",
+            fontSize: "40px",
+            lineHeight: "40px",
           },
         }}
       >
@@ -99,7 +101,18 @@ const AboutPage = ({ aboutUs }) => {
           },
         }}
       >
-        <img class="about-us-image" src={aboutUs?.media.url} alt="about us" />
+        <Box
+          data-aos="fade-in"
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <img class="about-us-image" src={aboutUs.media.url} alt="about us" />
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -125,7 +138,7 @@ const AboutPage = ({ aboutUs }) => {
               fontSize: "3vw",
               lineHeight: "3vw",
               color: "black",
-              width: "60%",
+              width: "50%",
               textAlign: "left",
               padding: 0,
               "&:hover": {
@@ -133,8 +146,8 @@ const AboutPage = ({ aboutUs }) => {
                 color: "red",
               },
               [theme.breakpoints.down("sm")]: {
-                fontSize: "14px",
-                lineHeight: "14px",
+                fontSize: "18px",
+                lineHeight: "20px",
                 width: "50%",
               },
             }}
@@ -162,8 +175,10 @@ const AboutPage = ({ aboutUs }) => {
                 whiteSpace: "nowrap",
                 marginBottom: "3%",
                 [theme.breakpoints.down("sm")]: {
-                  fontSize: "14px",
-                  lineHeight: "14px",
+                  fontSize: "20px",
+                  lineHeight: "20px",
+                  marginBottom: "8%",
+                  letterSpacing: "1px",
                 },
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,

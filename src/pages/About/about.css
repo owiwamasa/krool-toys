@@ -1,6 +1,7 @@
 .about-us-image {
   height: 15%;
   width: 60%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 600px) {
