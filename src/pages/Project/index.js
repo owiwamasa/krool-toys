@@ -41,7 +41,7 @@ const ProjectPage = ({ projects }) => {
         onClick={() => navigate("/")}
         sx={{
           alignSelf: "flex-end",
-          fontFamily: "PixelTimesNewRoman",
+          fontFamily: "Inter",
           fontSize: "5.5vw",
           height: "4vw",
           color: "black",
@@ -69,16 +69,16 @@ const ProjectPage = ({ projects }) => {
             maxWidth: "550px",
             maxHeight: "650px",
             border: "1px solid black",
-            boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+            boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
             transform: "rotate(-10deg)",
           }}
         />
         <Typography
           data-aos="fade-in"
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "Inter",
             fontSize: "6vw",
-            lineHeight: "5vw",
+            lineHeight: "6vw",
             paddingBottom: "8%",
             width: "60%",
             textAlign: "right",
@@ -103,11 +103,13 @@ const ProjectPage = ({ projects }) => {
         <Typography
           data-aos="flip-right"
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "Inter",
             fontSize: "3vw",
+            lineHeight: "3.5vw",
             padding: "8% 3% 7% 0",
             width: "60%",
             textAlign: "left",
+            textTransform: "capitalize",
             [theme.breakpoints.down("sm")]: {
               fontSize: "16px",
               lineHeight: "20px",
@@ -127,7 +129,7 @@ const ProjectPage = ({ projects }) => {
             maxWidth: "550px",
             maxHeight: "650px",
             border: "1px solid black",
-            boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+            boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
             transform: "rotate(10deg)",
           }}
         />
@@ -139,7 +141,7 @@ const ProjectPage = ({ projects }) => {
             <Typography
               key={index}
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "MessyWritingPixel",
                 fontSize: "5vw",
                 marginRight: "2vw",
                 color: "#DC159D",
@@ -177,7 +179,7 @@ const ProjectPage = ({ projects }) => {
             alt="project"
             style={{
               border: "1px solid black",
-              boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+              boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
               objectFit: "cover",
             }}
           />
@@ -198,7 +200,7 @@ const ProjectPage = ({ projects }) => {
             alt="project"
             style={{
               border: "1px solid black",
-              boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+              boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
               objectFit: "cover",
             }}
           />
@@ -232,7 +234,7 @@ const ProjectPage = ({ projects }) => {
               alt="project"
               style={{
                 border: "1px solid black",
-                boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+                boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
                 objectFit: "cover",
                 transform: "rotate(-10deg)",
               }}
@@ -254,7 +256,7 @@ const ProjectPage = ({ projects }) => {
               alt="project"
               style={{
                 border: "1px solid black",
-                boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+                boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
                 objectFit: "cover",
                 transform: "rotate(10deg)",
               }}
@@ -264,7 +266,7 @@ const ProjectPage = ({ projects }) => {
         <Typography
           data-aos="flip-right"
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "Inter",
             fontSize: "3vw",
             lineHeight: "3.5vw",
             width: "40%",

@@ -78,7 +78,7 @@ const RouteProvider = () => {
         <img src={LogoGif} width="500px" height="300px" alt="logo" />
         <Typography
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "MessyWritingPixel",
             fontSize: "32px",
           }}
         >

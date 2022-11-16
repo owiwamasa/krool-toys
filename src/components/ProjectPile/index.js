@@ -120,7 +120,7 @@ const ProjectPile = ({ project, selectedProjectIndex }) => {
                   maxWidth: "500px",
                   maxHeight: "550px",
                   border: "1px solid black",
-                  boxShadow: "14px 10px 20px rgb(0,0,0,0.6)",
+                  boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
                 }}
               />
             ))}

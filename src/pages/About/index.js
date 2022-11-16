@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import { theme } from "../../MuiStyling";
 import "./about.css";
 import MickeyCursor from "../../assets/NormalSelect.cur";
+import Image from "mui-image";
 
 const AboutPage = ({ aboutUs }) => {
   const [open, setOpen] = useState(false);
@@ -67,7 +68,7 @@ const AboutPage = ({ aboutUs }) => {
           color: "black",
           fontSize: "5.5vw",
           height: "4vw",
-          fontFamily: "PixelTimesNewRoman",
+          fontFamily: "Inter",
           "&:hover": {
             backgroundColor: "transparent",
           },
@@ -77,16 +78,24 @@ const AboutPage = ({ aboutUs }) => {
       </Button>
       <Typography
         sx={{
-          fontFamily: "PixelTimesNewRoman",
-          fontSize: "5vw",
+          fontFamily: "Inter",
+          fontSize: "4vw",
           lineHeight: "5.5vw",
           width: "85%",
           marginBottom: "2%",
           [theme.breakpoints.down("sm")]: {
-            marginTop: "10%",
+            marginTop: "5%",
             paddingLeft: "3%",
-            fontSize: "40px",
-            lineHeight: "40px",
+            fontSize: "32px",
+            lineHeight: "32px",
+          },
+          [theme.breakpoints.up("lg")]: {
+            marginTop: "0%",
+            marginBottom: "5%",
+            width: "70%",
+            paddingLeft: "3%",
+            fontSize: "45px",
+            lineHeight: "70px",
           },
         }}
       >
@@ -109,9 +118,22 @@ const AboutPage = ({ aboutUs }) => {
             alignItems: "center",
             width: "100%",
             height: "100%",
+            [theme.breakpoints.down("md")]: {
+              width: "70%",
+            },
+            [theme.breakpoints.down("sm")]: {
+              width: "100%",
+              marginTop: "5%",
+            },
           }}
         >
-          <img class="about-us-image" src={aboutUs.media.url} alt="about us" />
+          <Image
+            showLoading={true}
+            duration={500}
+            class="about-us-image"
+            src={aboutUs.media.url}
+            alt="about us"
+          />
         </Box>
         <Box
           sx={{
@@ -137,7 +159,7 @@ const AboutPage = ({ aboutUs }) => {
             sx={{
               alignSelf: "flex-start",
               marginLeft: "10%",
-              fontFamily: "PixelTimesNewRoman",
+              fontFamily: "Inter",
               fontSize: "3vw",
               lineHeight: "3vw",
               color: "black",
@@ -147,11 +169,18 @@ const AboutPage = ({ aboutUs }) => {
               "&:hover": {
                 backgroundColor: "transparent",
                 color: "red",
+                fontFamily: "MessyWritingPixel",
+                fontSize: "3.5vw",
+                lineHeight: "3.5vw",
               },
               [theme.breakpoints.down("sm")]: {
                 fontSize: "18px",
                 lineHeight: "20px",
                 width: "50%",
+              },
+              [theme.breakpoints.up("lg")]: {
+                fontSize: "36px",
+                lineHeight: "36px",
               },
             }}
           >
@@ -170,7 +199,7 @@ const AboutPage = ({ aboutUs }) => {
               href="https://krooltoys.com/"
               target="_blank"
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "Inter",
                 fontSize: "3.5vw",
                 lineHeight: "3.5vw",
                 color: "black",
@@ -186,6 +215,12 @@ const AboutPage = ({ aboutUs }) => {
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
                   color: "purple",
+                  fontFamily: "MessyWritingPixel",
+                  fontSize: "4.5vw",
+                },
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "42px",
+                  lineHeight: "42px",
                 },
               }}
             >
@@ -194,7 +229,7 @@ const AboutPage = ({ aboutUs }) => {
             <Link
               href="mailto:sup@krooltoys.com"
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "Inter",
                 fontSize: "2.5vw",
                 lineHeight: "2.5vw",
                 color: "black",
@@ -208,6 +243,10 @@ const AboutPage = ({ aboutUs }) => {
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
                 },
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "30px",
+                  lineHeight: "30px",
+                },
               }}
             >
               sup@krooltoys.com for Business
@@ -215,7 +254,7 @@ const AboutPage = ({ aboutUs }) => {
             <Link
               href="mailto:press@krooltoys.com"
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "Inter",
                 fontSize: "2.5vw",
                 lineHeight: "2.5vw",
                 color: "black",
@@ -229,6 +268,10 @@ const AboutPage = ({ aboutUs }) => {
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
                 },
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "30px",
+                  lineHeight: "30px",
+                },
               }}
             >
               press@krooltoys.com for Press
@@ -237,7 +280,7 @@ const AboutPage = ({ aboutUs }) => {
               href="https://www.dropbox.com/s/xr17es1m3hfv4g2/krool-toys-terms-of-service.pdf?dl=0"
               target="_blank"
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "Inter",
                 fontSize: "2.5vw",
                 lineHeight: "2.5vw",
                 color: "black",
@@ -251,15 +294,19 @@ const AboutPage = ({ aboutUs }) => {
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
                 },
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "30px",
+                  lineHeight: "30px",
+                },
               }}
             >
               Terms of Service
             </Link>
             <Link
-              href="https://www.dropbox.com/scl/fo/1bwt11dis48735b57vn9x/h?dl=0&rlkey=lfi2zwauqz8rbhljony1y2kc6"
+              href="https://www.dropbox.com/scl/fo/1bwt11dis48735b57vn9x/h?dl=0&preview=krool-toys-privacy-policy.pdf&rlkey=lfi2zwauqz8rbhljony1y2kc6"
               target="_blank"
               sx={{
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "Inter",
                 fontSize: "2.5vw",
                 lineHeight: "2.5vw",
                 color: "black",
@@ -271,6 +318,10 @@ const AboutPage = ({ aboutUs }) => {
                 },
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
+                },
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "30px",
+                  lineHeight: "30px",
                 },
               }}
             >

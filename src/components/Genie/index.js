@@ -10,7 +10,7 @@ const Genie = () => {
   }, []);
   return (
     <div
-      data-aos="slide-up"
+      data-aos="slide-right"
       style={{
         width: "40%",
         height: "40%",
@@ -22,7 +22,7 @@ const Genie = () => {
     >
       <a
         className="bubble bubble-bottom-left"
-        href="mailto: info@krooltoys.com"
+        href="mailto:mailto:sup@krooltoys.com"
         style={{
           textDecoration: "none",
           marginBottom: "30px",
@@ -31,7 +31,7 @@ const Genie = () => {
       >
         Click me to receive 3 wishes.
       </a>
-      <a href="mailto: info@krooltoys.com" style={{ width: "40%" }}>
+      <a href="mailto:mailto:sup@krooltoys.com" style={{ width: "40%" }}>
         <img width="100%" height="auto" src={GeniePicture} alt="genie" />
       </a>
     </div>

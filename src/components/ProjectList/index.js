@@ -37,7 +37,7 @@ const ProjectList = ({
               fontFamily: "Inter",
               fontSize: "2vw",
               whiteSpace: "nowrap",
-              lineHeight: "4vw",
+              lineHeight: "5vw",
               marginRight: "1vw",
               [theme.breakpoints.down("md")]: {
                 fontSize: "3vw",
@@ -52,7 +52,17 @@ const ProjectList = ({
               },
             }}
           >
-            {index < 9 ? `0${index + 1}` : index + 1}
+            {index % 6 === 0
+              ? "✩"
+              : index % 6 === 1
+              ? "✵"
+              : index % 6 === 2
+              ? "☪"
+              : index % 6 === 3
+              ? "⚝"
+              : index % 6 === 4
+              ? "✰"
+              : "✡"}
           </Typography>
           <Typography
             onClick={() => navigate(`/projects/${index + 1}`)}
@@ -62,7 +72,7 @@ const ProjectList = ({
             }}
             sx={{
               fontFamily:
-                selectedProjectIndex === index ? "PixelTimesNewRoman" : "Inter",
+                selectedProjectIndex === index ? "MessyWritingPixel" : "Inter",
               fontSize: selectedProjectIndex === index ? "5vw" : "4vw",
               whiteSpace: "nowrap",
               lineHeight: "5vw",
@@ -76,7 +86,7 @@ const ProjectList = ({
                 whiteSpace: "normal",
               },
               "&:hover": {
-                fontFamily: "PixelTimesNewRoman",
+                fontFamily: "MessyWritingPixel",
                 fontSize: "5vw",
                 [theme.breakpoints.down("md")]: {
                   fontSize: "7vw",

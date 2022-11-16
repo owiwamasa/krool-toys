@@ -24,7 +24,7 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
           disableRipple
           onClick={() => navigate(`/projects/${Number(id) - 1}`)}
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "Inter",
             fontSize: "3vw",
             color: "black",
             whiteSpace: "nowrap",
@@ -49,7 +49,7 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
           disableRipple
           onClick={() => navigate(`/projects/${Number(id) + 1}`)}
           sx={{
-            fontFamily: "PixelTimesNewRoman",
+            fontFamily: "Inter",
             fontSize: "3vw",
             color: "black",
             whiteSpace: "nowrap",

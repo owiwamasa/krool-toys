@@ -10,3 +10,10 @@
     width: 95%;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .about-us-image {
+    max-height: 492px;
+    max-width: 615px;
+  }
+}

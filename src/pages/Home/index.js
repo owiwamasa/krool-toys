@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import ProjectPile from "../../components/ProjectPile";
 import Genie from "../../components/Genie";
 import ProjectList from "../../components/ProjectList";
@@ -62,19 +62,6 @@ const Home = ({
         </Box>
       </Box>
       <Genie />
-      <Typography
-        sx={{
-          marginTop: "10px",
-          fontFamily: "PixelTimesNewRoman",
-          width: "90%",
-          fontSize: "22vw",
-          lineHeight: "18vw",
-          whiteSpace: "nowrap",
-          marginBottom: "30px",
-        }}
-      >
-        Krool Toys
-      </Typography>
     </Box>
   );
 };
