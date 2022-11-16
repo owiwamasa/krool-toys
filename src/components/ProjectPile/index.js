@@ -102,6 +102,7 @@ const ProjectPile = ({ project, selectedProjectIndex }) => {
           >
             {project?.featuredMedia.map((media, index) => (
               <Image
+                showLoading={true}
                 onClick={() =>
                   navigate(`/projects/${selectedProjectIndex + 1}`)
                 }
