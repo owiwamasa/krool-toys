@@ -60,7 +60,7 @@ const ProjectPile = ({ project, selectedProjectIndex }) => {
           marginTop: "10%",
         },
         [theme.breakpoints.down("lg")]: {
-          marginTop: "12%",
+          marginTop: "25%",
         },
         [theme.breakpoints.down("md")]: {
           display: "none",

@@ -21,8 +21,25 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        width: "100%",
+        maxWidth: "100%",
+        boxSizing: "border-box",
+        padding: "12px",
       }}
     >
+      <Box
+        sx={{
+          [theme.breakpoints.up("md")]: {
+            display: "none",
+          },
+          minWidth: "100%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <AboutUsButton />
+      </Box>
       <Box
         sx={{
           display: "flex",
@@ -34,6 +51,7 @@ const Home = () => {
           },
           [theme.breakpoints.down("md")]: {
             height: "100%",
+            marginTop: "8px",
           },
         }}
       >
@@ -53,6 +71,7 @@ const Home = () => {
             top: "1%",
             [theme.breakpoints.down("md")]: {
               width: "20%",
+              display: "none",
             },
           }}
         >

@@ -178,6 +178,12 @@ const AboutPage = () => {
                   fontSize: "50px",
                   lineHeight: "50px",
                 },
+                [theme.breakpoints.down("sm")]: {
+                  fontSize: "18px",
+                  lineHeight: "20px",
+                  width: "50%",
+                  fontFamily: "Inter",
+                },
               },
               [theme.breakpoints.down("sm")]: {
                 fontSize: "18px",
@@ -223,6 +229,13 @@ const AboutPage = () => {
                   color: "purple",
                   fontFamily: "MessyWritingPixel",
                   fontSize: "4.5vw",
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "20px",
+                    lineHeight: "20px",
+                    marginBottom: "8%",
+                    letterSpacing: "1px",
+                    fontFamily: "Inter",
+                  },
                 },
                 [theme.breakpoints.up("lg")]: {
                   fontSize: "42px",

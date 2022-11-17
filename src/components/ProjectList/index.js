@@ -17,7 +17,10 @@ const ProjectList = ({
         paddingLeft: "3vw",
         minWidth: "50%",
         [theme.breakpoints.down("md")]: {
-          minWidth: "70%",
+          width: "70%",
+        },
+        [theme.breakpoints.down("sm")]: {
+          width: "90%",
         },
       }}
     >
@@ -28,7 +31,7 @@ const ProjectList = ({
             display: "flex",
             alignItems: "flex-end",
             [theme.breakpoints.down("sm")]: {
-              marginBottom: "2%",
+              marginBottom: "3%",
             },
           }}
         >
@@ -39,6 +42,10 @@ const ProjectList = ({
               whiteSpace: "nowrap",
               lineHeight: "5vw",
               marginRight: "1vw",
+              [theme.breakpoints.down("xl")]: {
+                fontSize: "3vw",
+                lineHeight: "7vw",
+              },
               [theme.breakpoints.down("md")]: {
                 fontSize: "3vw",
                 lineHeight: "6vw",
@@ -46,7 +53,7 @@ const ProjectList = ({
               },
               [theme.breakpoints.down("sm")]: {
                 fontSize: "20px",
-                lineHeight: "28px",
+                lineHeight: "48px",
                 alignSelf: "flex-start",
                 marginRight: "2.5vw",
               },
@@ -64,27 +71,37 @@ const ProjectList = ({
               fontFamily:
                 selectedProjectIndex === index ? "PixelTimesNewRoman" : "Inter",
               fontSize: selectedProjectIndex === index ? "5vw" : "4vw",
-              whiteSpace: "nowrap",
               lineHeight: "5vw",
+              [theme.breakpoints.down("xl")]: {
+                fontSize: selectedProjectIndex === index ? "6vw" : "5vw",
+                lineHeight: "6vw",
+              },
               [theme.breakpoints.down("md")]: {
-                fontSize: selectedProjectIndex === index ? "7vw" : "6vw",
-                lineHeight: "7vw",
+                fontSize: selectedProjectIndex === index ? "8.5vw" : "7vw",
+                lineHeight: "8.5vw",
               },
               [theme.breakpoints.down("sm")]: {
-                fontSize: selectedProjectIndex === index ? "9vw" : "32px",
-                lineHeight: selectedProjectIndex === index ? "8vw" : "36px",
+                fontFamily: "Inter",
+                fontSize: "48px",
+                lineHeight: "48px",
                 whiteSpace: "normal",
               },
               "&:hover": {
                 fontFamily: "PixelTimesNewRoman",
                 fontSize: "5vw",
+                [theme.breakpoints.down("xl")]: {
+                  fontSize: selectedProjectIndex === index ? "6vw" : "5vw",
+                  lineHeight: "6vw",
+                },
                 [theme.breakpoints.down("md")]: {
-                  fontSize: "7vw",
-                  lineHeight: "7vw",
+                  fontSize: "8.5vw",
+                  lineHeight: "8.5vw",
                 },
                 [theme.breakpoints.down("sm")]: {
-                  fontSize: "9vw",
-                  lineHeight: "8vw",
+                  fontFamily: "Inter",
+                  fontSize: "48px",
+                  lineHeight: "48px",
+                  whiteSpace: "normal",
                 },
               },
             }}

@@ -16,6 +16,7 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
         minWidth: "90%",
         [theme.breakpoints.down("sm")]: {
           minWidth: "100%",
+          marginTop: "20px",
         },
       }}
     >
@@ -33,12 +34,20 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
               backgroundColor: "transparent",
             },
             [theme.breakpoints.down("sm")]: {
-              fontSize: "14px",
+              fontSize: "18px",
               lineHeight: "20px",
             },
           }}
         >
-          <WestIcon sx={{ marginRight: "10%", fontSize: "3vw" }} />
+          <WestIcon
+            sx={{
+              marginRight: "10%",
+              fontSize: "3vw",
+              [theme.breakpoints.down("sm")]: {
+                marginRight: "8px",
+              },
+            }}
+          />
           {prevProject?.title}
         </Button>
       ) : (
@@ -58,13 +67,21 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
               backgroundColor: "transparent",
             },
             [theme.breakpoints.down("sm")]: {
-              fontSize: "14px",
+              fontSize: "18px",
               lineHeight: "20px",
             },
           }}
         >
           {nextProject?.title}
-          <EastIcon sx={{ marginLeft: "10%", fontSize: "3vw" }} />
+          <EastIcon
+            sx={{
+              marginLeft: "10%",
+              fontSize: "3vw",
+              [theme.breakpoints.down("sm")]: {
+                marginLeft: "8px",
+              },
+            }}
+          />
         </Button>
       ) : (
         <div></div>

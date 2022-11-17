@@ -18,7 +18,7 @@ const AboutUsButton = () => {
         justifyContent: "flex-start",
         padding: "5px 40px 0 0 ",
         [theme.breakpoints.down("md")]: {
-          justifyContent: "center",
+          justifyContent: "flex-end",
           padding: "0 0 0 20px",
           marginRight: "20px",
         },
@@ -39,10 +39,10 @@ const AboutUsButton = () => {
             backgroundColor: "transparent",
             textDecoration: "underline",
           },
-          [theme.breakpoints.down("sm")]: {
+          [theme.breakpoints.down("md")]: {
             backgroundColor: "transparent",
             fontFamily: "PixelTimesNewRoman",
-            fontSize: "20px",
+            fontSize: "24px",
           },
         }}
       >
