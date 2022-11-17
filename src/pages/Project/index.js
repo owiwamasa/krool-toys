@@ -114,7 +114,7 @@ const ProjectPage = () => {
             fontFamily: "PixelTimesNewRoman",
             fontSize: "3vw",
             lineHeight: "3.5vw",
-            padding: "10% 3% 7% 6%",
+            padding: "12% 3% 7% 2%",
             width: "60%",
             textAlign: "left",
             textTransform: "capitalize",
