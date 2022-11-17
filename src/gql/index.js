@@ -2,7 +2,7 @@ import { gql } from "graphql-request";
 
 export const ALL_PROJECTS = gql`
   query Projects {
-    projects {
+    projects(first: 100) {
       id
       title
       subtitle {
