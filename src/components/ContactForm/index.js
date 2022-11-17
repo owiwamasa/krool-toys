@@ -4,7 +4,7 @@ import { Box, FormControl, TextField, Button } from "@mui/material";
 
 const onSubmit = (email, phone) => {
   const createContact = async (email, phone) => {
-    const result = await request({
+    await request({
       url: process.env.REACT_APP_HYGRAPH_URL,
       document: gql`
           mutation ContactMutation {
@@ -19,8 +19,6 @@ const onSubmit = (email, phone) => {
         Authorization: `Bearer ${process.env.REACT_APP_HYGRAPH_API_TOKEN}`,
       },
     });
-
-    console.log(result);
   };
 
   createContact(email, phone);

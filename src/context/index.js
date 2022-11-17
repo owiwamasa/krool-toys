@@ -11,7 +11,6 @@ export const KroolProvider = ({ children }) => {
   const [selectedProject, setSelectedProject] = useState();
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const { id } = useParams();
-  console.log(useParams);
 
   const prevProject = projects[Number(id) - 2] && projects[Number(id) - 2];
   const nextProject = projects[Number(id)] && projects[Number(id)];
