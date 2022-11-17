@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box } from "@mui/material";
 import ProjectPile from "../../components/ProjectPile";
 import Genie from "../../components/Genie";
 import ProjectList from "../../components/ProjectList";
 import { theme } from "../../MuiStyling";
 import AboutUsButton from "../../components/AboutUsButton";
+import { KroolContext } from "../../context";
 
-const Home = ({
-  projects,
-  selectedProject,
-  setSelectedProject,
-  selectedProjectIndex,
-  setSelectedProjectIndex,
-}) => {
+const Home = () => {
+  const {
+    projects,
+    selectedProject,
+    setSelectedProject,
+    selectedProjectIndex,
+    setSelectedProjectIndex,
+  } = useContext(KroolContext);
   return (
     <Box
       sx={{

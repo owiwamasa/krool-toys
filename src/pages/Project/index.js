@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import AOS from "aos";
@@ -8,8 +8,10 @@ import { theme } from "../../MuiStyling";
 import Marquee from "react-fast-marquee";
 import ProjectPageNavigation from "../../components/ProjectPageNavigation";
 import "./index.css";
+import { KroolContext } from "../../context";
 
-const ProjectPage = ({ projects }) => {
+const ProjectPage = () => {
+  const { projects } = useContext(KroolContext);
   const navigate = useNavigate();
   const { id } = useParams();
   const project = projects[Number(id) - 1];
@@ -22,7 +24,7 @@ const ProjectPage = ({ projects }) => {
 
   return (
     <Box
-      key={project.id}
+      key={project?.id}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -60,7 +62,7 @@ const ProjectPage = ({ projects }) => {
       >
         <Image
           alt="project"
-          src={project.featuredMedia[0].url}
+          src={project?.featuredMedia[0].url}
           shift="top"
           duration={1500}
           style={{
@@ -88,7 +90,7 @@ const ProjectPage = ({ projects }) => {
             },
           }}
         >
-          {project.title}
+          {project?.title}
         </Typography>
       </Box>
       <Box
@@ -103,13 +105,13 @@ const ProjectPage = ({ projects }) => {
         <Typography
           data-aos="flip-right"
           dangerouslySetInnerHTML={{
-            __html: project.subtitle.text.split("\\n").join("<br/><br/>"),
+            __html: project?.subtitle.text.split("\\n").join("<br/><br/>"),
           }}
           sx={{
-            fontFamily: "Inter",
+            fontFamily: "PixelTimesNewRoman",
             fontSize: "3vw",
             lineHeight: "3.5vw",
-            padding: "10% 3% 7% 0",
+            padding: "10% 3% 7% 6%",
             width: "60%",
             textAlign: "left",
             textTransform: "capitalize",
@@ -121,7 +123,7 @@ const ProjectPage = ({ projects }) => {
         />
         <Image
           alt="project"
-          src={project.featuredMedia[1].url}
+          src={project?.featuredMedia[1].url}
           shift="bottom"
           duration={1500}
           style={{
@@ -148,7 +150,7 @@ const ProjectPage = ({ projects }) => {
                 color: "#F90502",
               }}
             >
-              {`${project.title} x`}
+              {`${project?.title} x`}
             </Typography>
           ))}
       </Marquee>
@@ -176,7 +178,7 @@ const ProjectPage = ({ projects }) => {
           <img
             className="bottom-image"
             data-aos="slide-up"
-            src={project.featuredMedia[2].url}
+            src={project?.featuredMedia[2].url}
             alt="project"
             style={{
               border: "1px solid black",
@@ -197,7 +199,7 @@ const ProjectPage = ({ projects }) => {
           <img
             className="bottom-image"
             data-aos="slide-left"
-            src={project.otherMedia[0].url}
+            src={project?.otherMedia[0].url}
             alt="project"
             style={{
               border: "1px solid black",
@@ -231,7 +233,7 @@ const ProjectPage = ({ projects }) => {
           >
             <img
               className="bottom-image"
-              src={project.otherMedia[1].url}
+              src={project?.otherMedia[1].url}
               alt="project"
               style={{
                 border: "1px solid black",
@@ -253,7 +255,7 @@ const ProjectPage = ({ projects }) => {
           >
             <img
               className="bottom-image"
-              src={project.otherMedia[2].url}
+              src={project?.otherMedia[2].url}
               alt="project"
               style={{
                 border: "1px solid black",
@@ -267,7 +269,7 @@ const ProjectPage = ({ projects }) => {
         <Typography
           data-aos="flip-right"
           dangerouslySetInnerHTML={{
-            __html: project.description.text.split("\\n").join("<br/><br/>"),
+            __html: project?.description.text.split("\\n").join("<br/><br/>"),
           }}
           sx={{
             fontFamily: "Inter",

@@ -1,5 +1,5 @@
 import { Box, Button, Link, Typography, Modal, TextField } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactForm from "../../assets/KT_ContactForm.svg";
 import ContactFormSmall from "../../assets/KT_ContactForm_small.svg";
@@ -11,8 +11,10 @@ import { theme } from "../../MuiStyling";
 import "./about.css";
 import MickeyCursor from "../../assets/NormalSelect.cur";
 import Image from "mui-image";
+import { KroolContext } from "../../context";
 
-const AboutPage = ({ aboutUs }) => {
+const AboutPage = () => {
+  const { aboutUs } = useContext(KroolContext);
   const [open, setOpen] = useState(false);
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");

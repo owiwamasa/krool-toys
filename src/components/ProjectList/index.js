@@ -62,7 +62,7 @@ const ProjectList = ({
             }}
             sx={{
               fontFamily:
-                selectedProjectIndex === index ? "MessyWritingPixel" : "Inter",
+                selectedProjectIndex === index ? "PixelTimesNewRoman" : "Inter",
               fontSize: selectedProjectIndex === index ? "5vw" : "4vw",
               whiteSpace: "nowrap",
               lineHeight: "5vw",
@@ -76,7 +76,7 @@ const ProjectList = ({
                 whiteSpace: "normal",
               },
               "&:hover": {
-                fontFamily: "MessyWritingPixel",
+                fontFamily: "PixelTimesNewRoman",
                 fontSize: "5vw",
                 [theme.breakpoints.down("md")]: {
                   fontSize: "7vw",
