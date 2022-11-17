@@ -45,6 +45,11 @@ const Home = () => {
           display: "flex",
           width: "100%",
           overflow: "scroll",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          "-ms-overflow-style": "none",
+          scrollbarWidth: "none",
           marginBottom: "5%",
           [theme.breakpoints.up("md")]: {
             maxHeight: "950px",
