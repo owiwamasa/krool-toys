@@ -14,11 +14,6 @@ body button:hover {
 }
 
 @font-face {
-  font-family: "MessyWritingPixel";
-  src: url("./assets/messy-writing-pixel.ttf");
-}
-
-@font-face {
   font-family: "PixelTimesNewRoman";
   src: url("./assets/PixelTimesNewRoman.ttf");
 }

@@ -147,7 +147,7 @@ const ProjectPage = () => {
             <Typography
               key={index}
               sx={{
-                fontFamily: "MessyWritingPixel",
+                fontFamily: "PixelTimesNewRoman",
                 fontSize: "5vw",
                 marginRight: "2vw",
                 color: "#F90502",

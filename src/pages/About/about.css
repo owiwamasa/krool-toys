@@ -11,9 +11,9 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1380px) {
   .about-us-image {
-    max-height: 492px;
-    max-width: 615px;
+    max-height: 546px;
+    max-width: 712px;
   }
 }

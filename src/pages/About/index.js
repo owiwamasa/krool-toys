@@ -110,6 +110,9 @@ const AboutPage = () => {
           [theme.breakpoints.down("md")]: {
             flexDirection: "column",
           },
+          [theme.breakpoints.up(1380)]: {
+            justifyContent: "center",
+          },
         }}
       >
         <Box
@@ -143,6 +146,10 @@ const AboutPage = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             alignItems: "left",
+            marginLeft: "5%",
+            [theme.breakpoints.up(1380)]: {
+              marginLeft: "60px",
+            },
             [theme.breakpoints.down("md")]: {
               marginTop: "5%",
               flexDirection: "row",
@@ -160,7 +167,6 @@ const AboutPage = () => {
             onClick={() => setOpen(true)}
             sx={{
               alignSelf: "flex-start",
-              marginLeft: "10%",
               fontFamily: "Inter",
               fontSize: "3vw",
               lineHeight: "3vw",
@@ -171,12 +177,12 @@ const AboutPage = () => {
               "&:hover": {
                 backgroundColor: "transparent",
                 color: "red",
-                fontFamily: "MessyWritingPixel",
+                fontFamily: "PixelTimesNewRoman",
                 fontSize: "3.5vw",
                 lineHeight: "3.5vw",
-                [theme.breakpoints.up("xl")]: {
-                  fontSize: "50px",
-                  lineHeight: "50px",
+                [theme.breakpoints.up("lg")]: {
+                  fontSize: "44px",
+                  lineHeight: "36px",
                 },
                 [theme.breakpoints.down("sm")]: {
                   fontSize: "18px",
@@ -203,7 +209,6 @@ const AboutPage = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              marginLeft: "10%",
             }}
           >
             <Link
@@ -227,7 +232,7 @@ const AboutPage = () => {
                 "&:hover": {
                   cursor: `url(${MickeyCursor}), auto`,
                   color: "purple",
-                  fontFamily: "MessyWritingPixel",
+                  fontFamily: "PixelTimesNewRoman",
                   fontSize: "4.5vw",
                   [theme.breakpoints.down("sm")]: {
                     fontSize: "20px",
