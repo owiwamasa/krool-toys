@@ -33,7 +33,7 @@ const BottomProjectImagesSlide = ({ project }) => {
             src={image.url}
             style={{
               border: "1px solid black",
-              boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+              boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
               width: "200px",
               height: "250px",
               marginRight: "30px",
@@ -50,8 +50,8 @@ const BottomProjectImagesSlide = ({ project }) => {
           fontFamily: "Inter",
           width: "90%",
           paddingLeft: "20px",
-          fontSize: "16px",
-          lineHeight: "16px",
+          fontSize: "14px",
+          lineHeight: "14px",
           minHeight: "60px",
         }}
       />

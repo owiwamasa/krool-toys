@@ -37,7 +37,7 @@ const BottomHalfProject = ({ project }) => {
             alt="project"
             style={{
               border: "1px solid black",
-              boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+              boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
               objectFit: "cover",
             }}
           />
@@ -58,7 +58,7 @@ const BottomHalfProject = ({ project }) => {
             alt="project"
             style={{
               border: "1px solid black",
-              boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+              boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
               objectFit: "cover",
             }}
           />
@@ -96,7 +96,7 @@ const BottomHalfProject = ({ project }) => {
               alt="project"
               style={{
                 border: "1px solid black",
-                boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+                boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
                 objectFit: "cover",
                 transform: "rotate(-10deg)",
               }}
@@ -118,7 +118,7 @@ const BottomHalfProject = ({ project }) => {
               alt="project"
               style={{
                 border: "1px solid black",
-                boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+                boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
                 objectFit: "cover",
                 transform: "rotate(10deg)",
               }}
@@ -132,12 +132,12 @@ const BottomHalfProject = ({ project }) => {
           }}
           sx={{
             fontFamily: "Inter",
-            fontSize: "2vw",
-            lineHeight: "2.5vw",
+            fontSize: "1.8vw",
+            lineHeight: "2.2vw",
             width: "40%",
             [theme.breakpoints.down("sm")]: {
-              fontSize: "18px",
-              lineHeight: "18px",
+              fontSize: "16px",
+              lineHeight: "16px",
             },
           }}
         />

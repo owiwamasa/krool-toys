@@ -74,7 +74,7 @@ const ProjectPage = () => {
             maxWidth: "550px",
             maxHeight: "650px",
             border: "1px solid black",
-            boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+            boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
             transform: "rotate(-10deg)",
           }}
         />
@@ -135,7 +135,7 @@ const ProjectPage = () => {
             maxWidth: "550px",
             maxHeight: "650px",
             border: "1px solid black",
-            boxShadow: "14px 10px 20px rgb(0,0,0,0.45)",
+            boxShadow: "14px 10px 20px rgb(0,0,0,0.25)",
             transform: "rotate(10deg)",
           }}
         />
@@ -147,13 +147,18 @@ const ProjectPage = () => {
             <Typography
               key={index}
               sx={{
+                display: "flex",
+                alignItems: "center",
                 fontFamily: "PixelTimesNewRoman",
                 fontSize: "5vw",
                 marginRight: "2vw",
                 color: "#F90502",
               }}
             >
-              {`${project?.title} x`}
+              {project?.title}
+              <Typography sx={{ fontSize: "1vw", marginLeft: "2vw" }}>
+                {" \u2B24"}
+              </Typography>
             </Typography>
           ))}
       </Marquee>
