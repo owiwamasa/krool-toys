@@ -89,7 +89,7 @@ const ProjectList = ({
               },
             }}
           >
-            {project.title}
+            {project?.title}
           </Typography>
         </Box>
       ))}

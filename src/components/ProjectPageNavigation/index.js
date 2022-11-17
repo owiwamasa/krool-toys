@@ -39,7 +39,7 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
           }}
         >
           <WestIcon sx={{ marginRight: "10%", fontSize: "3vw" }} />
-          {prevProject.title}
+          {prevProject?.title}
         </Button>
       ) : (
         <div></div>
@@ -63,7 +63,7 @@ const ProjectPageNavigation = ({ nextProject, prevProject, id }) => {
             },
           }}
         >
-          {nextProject.title}
+          {nextProject?.title}
           <EastIcon sx={{ marginLeft: "10%", fontSize: "3vw" }} />
         </Button>
       ) : (

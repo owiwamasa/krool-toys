@@ -133,7 +133,7 @@ const AboutPage = () => {
             showLoading={true}
             duration={500}
             class="about-us-image"
-            src={aboutUs.media.url}
+            src={aboutUs?.media.url}
             alt="about us"
           />
         </Box>
@@ -174,6 +174,10 @@ const AboutPage = () => {
                 fontFamily: "MessyWritingPixel",
                 fontSize: "3.5vw",
                 lineHeight: "3.5vw",
+                [theme.breakpoints.up("xl")]: {
+                  fontSize: "50px",
+                  lineHeight: "50px",
+                },
               },
               [theme.breakpoints.down("sm")]: {
                 fontSize: "18px",
