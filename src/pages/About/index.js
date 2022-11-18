@@ -215,24 +215,14 @@ const AboutPage = () => {
               textDecoration: "none",
               whiteSpace: "nowrap",
               marginBottom: "3%",
-              [theme.breakpoints.down("sm")]: {
-                fontSize: "20px",
-                lineHeight: "20px",
-                marginBottom: "8%",
-                letterSpacing: "1px",
+              [theme.breakpoints.down("md")]: {
+                display: "none",
               },
               "&:hover": {
                 cursor: `url(${MickeyCursor}), auto`,
                 color: "purple",
                 fontFamily: "PixelTimesNewRoman",
                 fontSize: "4.5vw",
-                [theme.breakpoints.down("sm")]: {
-                  fontSize: "20px",
-                  lineHeight: "20px",
-                  marginBottom: "8%",
-                  letterSpacing: "1px",
-                  fontFamily: "Inter",
-                },
               },
               [theme.breakpoints.up("lg")]: {
                 fontSize: "42px",
@@ -249,6 +239,44 @@ const AboutPage = () => {
               alignItems: "flex-start",
             }}
           >
+            <Link
+              data-aos="flip-left"
+              href="https://krooltoys.com/"
+              target="_blank"
+              sx={{
+                fontFamily: "Inter",
+                fontSize: "3.5vw",
+                lineHeight: "3.5vw",
+                color: "black",
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                marginBottom: "3%",
+                [theme.breakpoints.up("md")]: {
+                  display: "none",
+                },
+                [theme.breakpoints.down("sm")]: {
+                  fontSize: "20px",
+                  lineHeight: "20px",
+                  marginBottom: "8%",
+                  letterSpacing: "1px",
+                },
+                "&:hover": {
+                  cursor: `url(${MickeyCursor}), auto`,
+                  color: "purple",
+                  fontFamily: "PixelTimesNewRoman",
+                  fontSize: "4.5vw",
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "20px",
+                    lineHeight: "20px",
+                    marginBottom: "8%",
+                    letterSpacing: "1px",
+                    fontFamily: "Inter",
+                  },
+                },
+              }}
+            >
+              Webstore
+            </Link>
             <Link
               href="mailto:sup@krooltoys.com"
               sx={{
